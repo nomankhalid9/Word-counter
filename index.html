@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter Tool</title>
+</head>
+<body>
+  <h1>Word Counter Tool</h1>
+  <textarea id="textInput" rows="8" cols="40" placeholder="Write something..."></textarea><br>
+  <button onclick="countWords()">Count Words</button>
+  <p id="result"></p>
+
+  <script>
+    function countWords() {
+      let text = document.getElementById("textInput").value.trim();
+      let words = text.split(/\s+/).filter(w => w.length > 0);
+      document.getElementById("result").innerText = "Total Words: " + words.length;
+    }
+  </script>
+</body>
+</html>
